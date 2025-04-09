@@ -24,7 +24,9 @@ function crearUser(e) {
 
     validaciones()
 }
-formUser.addEventListener('submit', crearUser)
+if (formUser) {
+    formUser.addEventListener('submit', crearUser);
+}
 
 
 function validaciones() {
@@ -51,7 +53,11 @@ function crearLocalStorage() {
     }
     users.push(user);
     localStorage.setItem('users', JSON.stringify(users))
-    createAlert('success', 'Usuario guardado')
+    createAlert('success', 'Usuario creado correctamente. Redirigiendo...');
+    
+    setTimeout(() => {
+        window.location.href = 'users.html';
+    }, 3000);
 }
 
 function createAlert(text, msg) {
@@ -68,9 +74,29 @@ function createAlert(text, msg) {
 }
 
 function createUserDOM() {
-    for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i);
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    userContainer.innerHTML = '';
+    
+    if (users.length === 0) {
+        userContainer.innerHTML = '<p class="text-muted">No hay usuarios registrados</p>';
+        return;
     }
+    
+    users.forEach(user => {
+        const card = document.createElement('div');
+        card.className = 'card mb-3';
+        card.style.width = '18rem';
+        
+        card.innerHTML = `
+            <div class="card-body">
+                <h5 class="card-title">${user.name}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">${user.email}</h6>
+                <p class="card-text text-truncate">Contraseña: ${'*'.repeat(user.password.length)}</p>
+            </div>
+        `;
+        
+        userContainer.appendChild(card);
+    });
 
 }
 createUserDOM()
