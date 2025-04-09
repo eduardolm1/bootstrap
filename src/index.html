@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Crear users</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="users.html">Users</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <h1>Main page</h1>
+    <div id="alertContainer">
+
+    </div>
+    <form id="formData" class="row g-3">
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">User name</label>
+          <input type="text" class="form-control" id="nameInput" value="edu" placeholder="Escribe tu nombre">
+        </div>
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email address</label>
+          <input type="email" class="form-control" value="emai@email.c" id="emailInput" placeholder="Escribe tu email">
+        </div>
+        <div class="mb-3">
+          <label for="passwordInput" class="form-label">Password</label>
+          <input type="password" id="passwordInput" value="ed" class="form-control" placeholder="Escriba una contraseña" aria-describedby="passwordHelpBlock">
+    
+        </div>
+        <div class="mb-3">
+          <label for="repeatPasswdInput" class="form-label">Repeat password</label>
+          <input type="passwordRepeat" id="repeatPasswdInput" value="ed" placeholder="Escriba su contraseña de nuevo" class="form-control" aria-describedby="passwordHelpBlock">
+    
+        </div>  <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Confirm</button>
+        </div>
+      </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+</body>
+
+</html>
